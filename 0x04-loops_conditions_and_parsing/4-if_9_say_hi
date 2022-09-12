@@ -4,7 +4,7 @@ count=1
 while [[ "$count" -le 10 ]]; do
 echo "Best School"
 count=$((count + 1))
-if [[ "$count" == 9 ]]; then
-printf "Best School \n Hi"
+if [[ "$count" == 10 ]]; then
+echo "Hi"
 fi
 done
