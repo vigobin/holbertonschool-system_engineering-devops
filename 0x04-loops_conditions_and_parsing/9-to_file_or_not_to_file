@@ -14,4 +14,6 @@ else
 fi
 if [ -f "$FILE" ]; then
  echo "school is a regular file"
+else
+echo ""
 fi
