@@ -5,5 +5,5 @@ while true
 do
 echo "To infinity and beyond"
 sleep 2
-trap kill -15 7-highlander echo "I am invincible!!!"
+trap echo "I am invincible!!!" sigterm
 done
