@@ -1,0 +1,5 @@
+Host 5547-web-01
+    HostName 15.237.56.174
+    User ubuntu
+    IdentityFile ~/.ssh/school
+    IdentitiesOnly yes
