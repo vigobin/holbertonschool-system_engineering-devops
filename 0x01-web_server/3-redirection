@@ -5,6 +5,6 @@ SRC="/etc/nginx/sites-available/default"
 apt-get -y update
 apt-get -y install nginx
 sudo service nginx start
-echo "Hello World" | sudo tee /usr/share/nginx/html/index.html
+echo "Hello World" | sudo tee /var/www/html/index.html
 sudo sed -i "30i $REDIR" $SRC
 sudo service nginx restart
