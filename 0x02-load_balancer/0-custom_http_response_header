@@ -6,6 +6,7 @@ ERRDIR="\\\n\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\
 HEADER="\\\n\tadd_header X-Served-By \$HOSTNAME;\n"
 sudo apt -y update
 sudo apt -y install nginx
+sudo service nginx start
 sudo chmod 777 /etc/nginx/sites-available/
 sudo chmod 777 /etc/nginx/sites-available/default
 echo "Hello World" | sudo tee /var/www/html/index.html
