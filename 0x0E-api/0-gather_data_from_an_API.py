@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Gather data from an API """
-
 import json
 import requests
 from sys import argv
@@ -8,17 +7,23 @@ from sys import argv
 
 def gather(emp_id):
     """Returns TODO list progress"""
-    emp_id = {'id': argv[1]}
-    task = {'userID': argv[1]}
-    url1 = 'https://jsonplaceholder.typicode.com/users'
-    url2 = 'https://jsonplaceholder.typicode.com/todos'
+    user = 'https://jsonplaceholder.typicode.com/users/{}'.format(emp_id)
+    todo = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(emp_id)
 
-    user = requests.get(url1, params=emp_id)
-    todo = requests.get(url2, params=task)
+    r_user = (requests.get(user)).json()
+    r_todo = (requests.get(todo)).json()
 
-    print(user.content)
-    print(todo.content)
+    name = r_user.get('name')
+    tasks = len(r_todo)
+    completed = sum(i.get('completed') for i in r_todo if i)
+
+    print('Employee {} is done with tasks({}/{}):'
+          .format(name, tasks, completed))
+    for j in r_todo:
+        title = j.get('title')
+        if j.get('completed'):
+            print('\t {}'.format(title))
 
 
 if __name__ == '__main__':
-    gather(emp_id=argv[1])
+    gather(argv[1])
