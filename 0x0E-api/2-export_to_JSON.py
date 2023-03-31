@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Export to CSV"""
+"""Export to JSON"""
 import csv
 import json
 import requests
@@ -7,7 +7,7 @@ from sys import argv
 
 
 def gather(emp_id):
-    """Export data in the CSV format."""
+    """Export data in the JSON format."""
     user = 'https://jsonplaceholder.typicode.com/users/{}'.format(emp_id)
     todo = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(emp_id)
 
