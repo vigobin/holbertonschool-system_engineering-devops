@@ -18,7 +18,7 @@ def gather(emp_id):
     completed = sum(i.get('completed') for i in r_todo if i)
 
     print('Employee {} is done with tasks({}/{}):'
-          .format(name, tasks, completed))
+          .format(name, completed, tasks))
     for j in r_todo:
         title = j.get('title')
         if j.get('completed'):
